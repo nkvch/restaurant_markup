@@ -1,0 +1,661 @@
+* {
+    box-sizing: border-box;
+}
+
+* > a {
+    text-decoration: none;
+    color: white;
+}
+
+* > a:visited {
+    color: white;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    margin: auto;
+    width: 1600px;
+}
+
+/* ###################
+    PARTS OF PAGE STYLING
+   ##################*/
+
+header {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    width: 1600px;
+    height: 110px;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.658) 0%, rgba(0,0,0,0) 100%);
+    color: white;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    width: 100%;
+}
+
+section.home {
+    height: 750px;
+    background-image: url(../images/backgrounds/promo_bg.png);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 430px auto 1fr;
+    grid-gap: 30px;
+    row-gap: 40px;
+    justify-items: center;
+}
+
+section.about {
+    height: 710px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    background-image: url(../images/backgrounds/about_bg.png);
+    padding: 60px 250px;
+}
+
+section.ingridients {
+    display: flex;
+    align-items: flex-start;
+    height: 758px;
+    background-image: url(../images/backgrounds/ingredients_bg.png);
+}
+
+section.menu {
+    background-image: url(../images/backgrounds/menu_bg.png);
+    height: 994px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 0 270px;
+    align-content: space-between;
+}
+
+section.reviews {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../images/backgrounds/reviews_bg.png);
+    height: 758px;
+}
+
+section.reservations {
+    height: 710px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
+    padding: 100px 215px;
+    background-image: url(../images/backgrounds/reservation_bg.png);
+}
+
+footer {
+    align-self: flex-end;
+    width: 1600px;
+    height: 320px;
+    padding: 52px 215px;
+    background-color: #191919;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 30px;
+}
+
+/* #################
+    COMMON ARTICLE STYLES
+   ################# */
+
+.article1 {
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.article1 h2 {
+    width: 432px;
+    height: 47px;
+    font-size: 36px;
+    line-height: 24px;
+    font-weight: 400;
+    font-family: "Yeseva One";
+    text-align: center;
+    margin: 0;
+}
+
+.article1 .divider {
+    margin: auto;
+}
+
+.article1 p {
+    width: 432px;
+    height: 130px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    font-family: "Lato";
+    text-align: center;
+    margin: 0;
+    margin-top: 30px;
+}
+
+.article2 {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    justify-items: center;
+    width: 770px;
+    height: 557px;
+    background: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 74px 70px;
+}
+
+.article2 h2 {
+    font-size: 36px;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Yeseva One";
+    margin: 0;
+}
+
+.article2 .text {
+    position: relative;
+    font-size: 25px;
+    line-height: 45px;
+    color: #dde0df;
+    font-weight: 700;
+    font-family: "Gentium Book Basic";
+    text-align: center;
+    margin: 0;
+}
+
+.article2 .text::before {
+    position: absolute;
+    left: -40px;
+    content: "“";
+    color: rgba(255, 255, 255, 0.5);
+    font-family: "Georgia";
+    font-size: 96px;
+}
+
+.article2 .sign {
+    font-size: 16px;
+    line-height: 45px;
+    color: #dde0df;
+    font-weight: 700;
+    font-family: "Gentium Book Basic";
+    text-align: center;
+    margin: 0;
+}
+
+.article3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.article3 h2 {
+    font-size: 21px;
+    font-weight: 400;
+    font-family: "Yeseva One";
+    margin: 0;
+}
+
+.article3 .footer-divider {
+    margin: 12px 0;
+}
+
+.article3 p {
+    text-align: center;
+    width: 370px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    font-family: "Open Sans";
+    margin: 0;
+}
+
+/* #################
+    HEADER STYLING
+   ################# */
+
+header > .logo {
+    font-size: 36px;
+    font-weight: 400;
+    font-family: "Yeseva One";
+    margin-left: 175px;
+}
+
+nav {
+    margin-left: 230px;
+    height: 110px;
+    position: relative;
+}
+
+nav > span.nav-marker {
+    position: absolute;
+    height: 4.5px;
+    background: white;
+    transition-property: left, width;
+    transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(0.27, 0.3, 0.45, 1.1);
+}
+
+nav > span.nav-marker.nav-home-marker {
+    width: 84.05px;
+    left: 0;
+}
+
+nav > span.nav-marker.nav-about-marker {
+    width: 86.09px;
+    left: 100.25px;
+}
+
+nav > span.nav-marker.nav-ingridients-marker {
+    width: 134.97px;
+    left: 202.546875px;
+}
+
+nav > span.nav-marker.nav-menu-marker {
+    width: 82.83px;
+    left: 353.71875px;
+}
+
+nav > span.nav-marker.nav-reviews-marker {
+    width: 105.09px;
+    left: 452.75px;
+}
+
+
+nav > span.nav-marker.nav-reservations-marker {
+    width: 150.92px;
+    left: 574.046875px;
+}
+
+nav > ul {
+    display: flex;
+    justify-content: space-between;
+    width: 725px;
+    font-size: 21px;
+    font-weight: 700;
+    font-family: "Gentium Book Basic";
+    text-align: left;
+    list-style: none;
+    padding: 0;
+    margin-top: 45px;
+}
+
+nav a {
+    padding: 45px 15px 10px 15px ;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    transition-duration: 200ms;
+    transition-property: background, border-top;
+    transition-timing-function: cubic-bezier(0, 0.35, 0.46, 0.76);
+}
+
+nav a:hover{
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+header ul.social {
+    display: flex;
+    justify-content: space-around;
+    width: 100px;
+    list-style: none;
+    padding: 0;
+}
+
+.fab {
+    font-size: 21px;
+    font-family: "Font Awesome";
+    color: #dab33e;
+}
+
+header ul.social a:hover .fab {
+    transition: all 0.6s ease 0s;
+    color: #8f752f;
+}
+
+/* #################
+    HOME SECTION STYLING
+   ################# */
+
+.home h1 {
+    grid-column: 1/3;
+    align-self: end;
+    width: 970px;
+    height: fit-content;
+    font-size: 90px;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Yeseva One";
+    text-align: center;
+    margin: 0;
+    filter: drop-shadow(0.469px 0.883px 1px rgba(1,1,1,0.64));
+}
+
+.home .divider {
+    grid-column: 1/3;
+}
+
+.home button {
+    width: 228px;
+    height: 57px;
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Lato";
+    text-align: center;
+}
+
+.home button.black {
+    background-color: rgba(0,0,0,0.7019607843137254);
+    border: 1px solid #000000;
+    justify-self: end;
+}
+
+.home button.white {
+    background-color: rgba(255,255,255,0.2784313725490196);
+    border: 1px solid #ffffff;
+    justify-self: start;
+}
+
+.home button.black:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgba(0,0,0,0.7019607843137254);
+}
+
+.home button.white:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.home button.black:active {
+   background-color: white;
+}
+
+.home button.white:active {
+    background-color: black;
+}
+
+/* #################
+    ABOUT SECTION STYLING
+   ################# */
+
+.about .article1 h2 {
+    color: #cc9900;
+}
+
+.about .article1 p{
+    color: #4c4c4c;
+}
+
+.about .cook {
+    margin-left: 60px;
+}
+
+/* #################
+    INGRIDIENTS SECTION STYLING
+   ################# */
+
+.ingridients .artcl-container {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto auto;
+    grid-template-areas: 
+        "article article article"
+        "first-img second-img third-img";
+    justify-items: center;
+    row-gap: 55px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 70px;
+    margin-left: 815px;
+    margin-top: 100px;
+}
+
+.ingridients .article1 {
+    grid-area: article;
+    height: fit-content;
+    margin: 0;
+}
+
+.ingridients .article1 h2 {
+    color: #ffffff;
+}
+
+.ingridients .article1 p{
+    color: #ffffff;
+}
+
+.ingridients  img:nth-child(2) {
+    grid-area: first-img;
+}
+
+.ingridients  img:nth-child(3) {
+    grid-area: second-img;
+}
+
+.ingridients img:nth-child(4) {
+    grid-area: third-img;
+}
+
+.ingridients img.ingr-image {
+    border: 5px solid rgba(255,255,255,0.09);
+    border-radius: 50%;
+}
+
+/* #################
+    MENU SECTION STYLING
+   ################# */
+
+.menu .article1.menu {
+    height: fit-content;
+    background: none;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.article1.menu:nth-child(1) {
+    margin-top: 108px;
+}
+
+.article1.menu:nth-child(2) {
+    margin-top: 54px;
+}
+
+.article1.menu:nth-child(3) {
+    margin-top: 108px;
+}
+
+.article1.menu:nth-child(4) {
+    margin-top: 54px;
+}
+
+.article1.menu h2 {
+    color: #cc9900;
+    width: fit-content;
+}
+
+.article1.menu .divider {
+    margin-bottom: 21px;
+}
+
+.menu-item {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+        "dish-name dish-price"
+        "dish-description dish-description";
+    font-size: 21px;
+    width: 457px;
+    padding: 6.5px 11px 10px 11px;
+    margin-bottom: 12px;
+}
+
+.menu-item .dish-name {
+    grid-area: dish-name;
+    text-align: left;
+    margin: 0;
+    color:#c89f2d;
+    padding-bottom: 8px;
+}
+
+.menu-item .dish-price {
+    grid-area: dish-price;
+    text-align: right;
+    margin: 0;
+    color:#c89f2d;
+    padding-bottom: 8px;
+}
+
+.menu-item .dish-description {
+    grid-area: dish-description;
+    text-align: left;
+    margin: 0;
+    height: fit-content;
+    border-top: 1px solid #ddb548;
+    padding-top: 8px;
+    width: 100%;
+}
+
+.menu-item.special {
+    border: 1px solid #ddb548;
+    position: relative;
+}
+
+.menu-item.special::before {
+    position: absolute;
+    content: "Special";
+    background-color: #c89f2d;
+    top: -21.5px;
+    right: -1px;
+    width: 66px;
+    height: 21.5px;
+    font-size: 14px;
+    line-height: 24px;
+    color: #f8fafa;
+    font-weight: 400;
+    font-family: "Lato";
+    text-align: center;
+}
+
+/* #################
+    REVIEWS SECTION STYLING
+    IS DESCRIBED ABOVE: IN COMMON ARTICLES AND PARTS OF THE PAGE
+   ################# */
+
+/* #################
+    RESERVATIONS SECTION STYLING
+   ################# */
+
+.images-holder img:nth-child(2) {
+    margin-left: 30px;
+}
+
+.article1.reservations {
+    background: none;
+    height: fit-content;
+    padding: 0;
+    margin: 0;
+}
+
+.article1.reservations h2 {
+    color: #cc9900;
+}
+
+.article1.reservations p {
+    padding: 0;
+    height: fit-content;
+}
+
+.article1.reservations > p:last-child{
+    margin-top: 15px;
+}
+
+.reservations form {
+    margin-top: 40px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reservations form table tr:nth-child(2) td  {
+    padding-bottom: 15px;
+}
+
+.reservations form table td:nth-child(1),
+.reservations form table td:nth-child(3) {
+    padding-right: 30px;
+}
+
+.reservations form input,
+.reservations form select {
+    width: 200px;
+    height: 35px;
+    background-color: rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+    color: #7c7c7c;
+    font-weight: 400;
+    font-style: italic;
+    font-family: "Open Sans";
+    padding-left: 18px;
+    border: 1px solid #c8c6c6;
+}
+
+.reservations form label {
+    font-size: 14px;
+    color: #c9a131;
+    font-weight: 700;
+    font-family: "Open Sans";
+}
+
+.reservations form input[type=submit] {
+    background-color: rgba(200,159,45,0.9803921568627451);
+    border: 1px solid #c89f2d;
+    color: #ffffff;
+    text-align: center;
+    font-style: normal;
+    margin-top: 33px;
+}
+
+/* #################
+    FOOTER SECTION STYLING
+   ################# */
+
+.article3 .holder .fab{
+    font-size: 16px;
+    line-height: 24px;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.article3 .holder {
+    margin-top: 45px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.article3 .holder.payments {
+    width: 120px;
+}
+
+.article3 .holder.social {
+    width: 88px;
+}
